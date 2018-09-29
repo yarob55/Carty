@@ -11,6 +11,8 @@ import UIKit
 import ARKit
 class LocationsFiller
 {
+    static var filledLocations = [Location]()
+    
     static func addLocations() -> [Location]
     {
         var locations = [Location]()
@@ -40,6 +42,22 @@ class LocationsFiller
         locations.append(location4)
         return locations
     }
+    
+    
+    static func fillLocations2()
+    {
+        let y:Double = 0
+        let location = Location(dimensions: SCNVector3(-0.5, y, -0.6), type: .Red, index : 1, itemName : "Tissues")
+        let location2 = Location(dimensions: SCNVector3(0, y, -1.5), type: .Red, index : 2, itemName : "Chips")
+        let location3 = Location(dimensions: SCNVector3(0.5, y, -1), type: .Red, index : 3, itemName : "Tea")
+        let location4 = Location(dimensions: SCNVector3(1.2, y, 0), type: .Red, index : 4, itemName : "Honey")
+        
+        LocationsFiller.filledLocations.append(location)
+        LocationsFiller.filledLocations.append(location2)
+        LocationsFiller.filledLocations.append(location3)
+        LocationsFiller.filledLocations.append(location4)
+    }
+    
     
     
     

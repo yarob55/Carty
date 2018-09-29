@@ -14,8 +14,8 @@ class ViewController2: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var buttonView: GradientView!
     
-    let list = ["Orange", "Yogurt", "Tuna", "Bread"]
-    let images = [#imageLiteral(resourceName: "item2"), #imageLiteral(resourceName: "item3"), #imageLiteral(resourceName: "milk"), #imageLiteral(resourceName: "bread")]
+    let list = ["Orange", "Yogurt", "Tuna", "Bread", "Apple", "Banana", "Carrot", "Cheese", "Chips", "Coffee", "Juice", "Pasta", "Tissues", "Orange", "Yogurt", "Tuna", "Bread", "Apple", "Banana", "Carrot", "Cheese", "Chips", "Coffee", "Juice", "Pasta", "Tissues", "Orange", "Yogurt", "Tuna", "Bread", "Apple", "Banana", "Carrot", "Cheese", "Chips", "Coffee", "Juice", "Pasta", "Tissues"]
+    let images = [#imageLiteral(resourceName: "item2"), #imageLiteral(resourceName: "item3"), #imageLiteral(resourceName: "milk"), #imageLiteral(resourceName: "bread"), #imageLiteral(resourceName: "apple"), #imageLiteral(resourceName: "banana"), #imageLiteral(resourceName: "carrot"), #imageLiteral(resourceName: "cheese"), #imageLiteral(resourceName: "chips"), #imageLiteral(resourceName: "coffee"), #imageLiteral(resourceName: "juice"), #imageLiteral(resourceName: "pasta"), #imageLiteral(resourceName: "toilet-paper"), #imageLiteral(resourceName: "item2"), #imageLiteral(resourceName: "item3"), #imageLiteral(resourceName: "milk"), #imageLiteral(resourceName: "bread"), #imageLiteral(resourceName: "apple"), #imageLiteral(resourceName: "banana"), #imageLiteral(resourceName: "carrot"), #imageLiteral(resourceName: "cheese"), #imageLiteral(resourceName: "chips"), #imageLiteral(resourceName: "coffee"), #imageLiteral(resourceName: "juice"), #imageLiteral(resourceName: "pasta"), #imageLiteral(resourceName: "toilet-paper"), #imageLiteral(resourceName: "item2"), #imageLiteral(resourceName: "item3"), #imageLiteral(resourceName: "milk"), #imageLiteral(resourceName: "bread"), #imageLiteral(resourceName: "apple"), #imageLiteral(resourceName: "banana"), #imageLiteral(resourceName: "carrot"), #imageLiteral(resourceName: "cheese"), #imageLiteral(resourceName: "chips"), #imageLiteral(resourceName: "coffee"), #imageLiteral(resourceName: "juice"), #imageLiteral(resourceName: "pasta"), #imageLiteral(resourceName: "toilet-paper")]
     let buttonViewTransform = CGAffineTransform(translationX: 0, y: 100)
     var selected: [String] = [] {
         didSet {
@@ -52,6 +52,29 @@ class ViewController2: UIViewController {
             
         }
         self.animateItemsIn()
+    }
+    
+    
+    @IBAction func startButtonClicked(_ sender: UIButton) {
+        var indexPaths = [IndexPath]()
+        indexPaths = tableView.indexPathsForSelectedRows ?? []
+        
+        LocationsFiller.fillLocations2()
+        var names = [String]()
+        for index in indexPaths{
+            let row = index.row
+            names.append(list[row])
+        }
+        print("\n\nNames")
+        print(names)
+        
+        for i in 0..<LocationsFiller.filledLocations.count{
+            let location = LocationsFiller.filledLocations[i]
+            location.itemName = names[i]
+        }
+        
+        performSegue(withIdentifier: "toAr", sender: nil)
+    
     }
     
     private func animateItemsIn() {
@@ -111,6 +134,8 @@ extension ViewController2: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 50
     }
+    
+
 }
 
 

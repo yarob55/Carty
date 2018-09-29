@@ -266,7 +266,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="acM-Zv-R9D" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-498" y="221"/>
+            <point key="canvasLocation" x="-692" y="221"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="h4b-2H-2xT">
@@ -277,9 +277,9 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CartyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="amU-Wb-gew">
-                                <rect key="frame" x="92.5" y="283" width="190" height="101"/>
+                                <rect key="frame" x="112.5" y="293.5" width="150" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="190" id="jtB-Q8-mAj"/>
+                                    <constraint firstAttribute="width" constant="150" id="jtB-Q8-mAj"/>
                                     <constraint firstAttribute="width" secondItem="amU-Wb-gew" secondAttribute="height" multiplier="15:8" id="zSR-ae-mJb"/>
                                 </constraints>
                             </imageView>
@@ -365,6 +365,9 @@
                                                                     <color key="value" red="0.2391428693" green="0.61931139000000002" blue="0.41173397360000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                                 <userDefinedRuntimeAttribute type="color" keyPath="onCheckColor">
+                                                                    <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </userDefinedRuntimeAttribute>
+                                                                <userDefinedRuntimeAttribute type="color" keyPath="onFillColor">
                                                                     <color key="value" red="0.2391428693" green="0.61931139000000002" blue="0.41173397360000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 </userDefinedRuntimeAttribute>
                                                             </userDefinedRuntimeAttributes>
@@ -418,7 +421,7 @@
                                 <rect key="frame" x="0.0" y="607" width="375" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="onC-ws-lv2">
-                                        <rect key="frame" x="0.0" y="9" width="375" height="51"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                         <color key="backgroundColor" red="0.87534816906895219" green="0.7400229069276717" blue="0.1048316574146215" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="17"/>
                                         <state key="normal" title="Start Navigation">
@@ -430,13 +433,13 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="ArE-87-B9f" kind="show" id="H3k-gg-uGy"/>
+                                            <action selector="startButtonClicked:" destination="OqM-t2-Wgt" eventType="touchUpInside" id="0yi-N9-NXL"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="onC-ws-lv2" firstAttribute="top" secondItem="Rka-t9-vJG" secondAttribute="top" constant="9" id="3ud-Pg-HWo"/>
+                                    <constraint firstItem="onC-ws-lv2" firstAttribute="top" secondItem="Rka-t9-vJG" secondAttribute="top" id="3ud-Pg-HWo"/>
                                     <constraint firstAttribute="bottom" secondItem="onC-ws-lv2" secondAttribute="bottom" id="5O6-ur-RsX"/>
                                     <constraint firstItem="onC-ws-lv2" firstAttribute="leading" secondItem="Rka-t9-vJG" secondAttribute="leading" id="NW3-BS-8Aa"/>
                                     <constraint firstAttribute="height" constant="60" id="hAh-Wb-PhG"/>
@@ -473,6 +476,7 @@
                         <outlet property="buttonView" destination="Rka-t9-vJG" id="UJB-uq-VmM"/>
                         <outlet property="imageView" destination="3eH-Pn-nap" id="gQT-fu-Vqz"/>
                         <outlet property="tableView" destination="y3Q-Ac-3nN" id="1JT-RE-Y91"/>
+                        <segue destination="ArE-87-B9f" kind="show" identifier="toAr" id="JGW-oe-l0t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ICM-hU-rYe" userLabel="First Responder" sceneMemberID="firstResponder"/>

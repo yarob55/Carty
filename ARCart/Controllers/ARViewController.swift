@@ -109,12 +109,12 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     // MARK: LIFE CYCLE METHODS
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.locations = LocationsFiller.addLocations()
+        self.locations = LocationsFiller.filledLocations
         tableView.delegate = self
         tableView.dataSource = self
         
         //set up the debugging options
-        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints]
         
         //horizontal detection
         // Set the view's delegate
