@@ -84,7 +84,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
                 }
                 
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    
+                    //d
                     self.lastAnimationForItemLabel()
                     
                     DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
